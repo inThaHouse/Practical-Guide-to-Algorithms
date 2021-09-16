@@ -3,20 +3,20 @@
 // You can do a property look up which is an inexpensive operation.
 // This is a good technique to check unique values in a list.
 
-const isUnique = (list) => {
+const isListUnique = (list) => {
   const breadCrumbs = {}
-  let uniqueBool = true
+  let isUnique = true
 
   for (let index = 0; index < list.length; index++) {
     if (breadCrumbs[list[index]]) {
-      uniqueBool = false
+      isUnique = false
     } else {
       breadCrumbs[list[index]] = true
     }
   }
 
-  return uniqueBool
+  return isUnique
 }
 
-console.log(isUnique([1, 2, 3])) // true
-console.log(isUnique([1, 3, 3])) // false
+console.log(isListUnique([1, 2, 3])) // true
+console.log(isListUnique([1, 3, 3])) // false

@@ -3,16 +3,18 @@
 const uniqueSort = (list) => {
   const cache = {}
 
-  const uniques = list.filter((item) => {
+  const byUniqueItem = (item) => {
     if (!cache[item]) {
       cache[item] = item
       return true
     } else {
       return false
     }
-  })
+  }
 
-  return uniques.sort((a, b) => a - b)
+  const uniqueElements = list.filter(byUniqueItem)
+
+  return uniqueElements.sort((a, b) => a - b)
 }
 
 console.log(uniqueSort([1, 5, 2, 1]))
